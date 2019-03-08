@@ -1,4 +1,7 @@
 import pymysql.cursors
+from gensim.models import Word2Vec
+from nltk import regexp_tokenize
+import operator
 
 connection = pymysql.connect(host='myhost',
                              user='myuser',
@@ -7,10 +10,6 @@ connection = pymysql.connect(host='myhost',
                              charset='charset'
                              )
 cursor = connection.cursor()
-
-from gensim.models import Word2Vec
-from nltk import regexp_tokenize
-import operator
 
 # contents : NLP
 def tokenize(contents):

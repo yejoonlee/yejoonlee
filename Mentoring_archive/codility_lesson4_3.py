@@ -2,6 +2,7 @@
 
 A = [3,4,4,6,1,4,4]
 
+# Solution 1
 def solution(N, A):
     lN = [0] * N
     for a in A:

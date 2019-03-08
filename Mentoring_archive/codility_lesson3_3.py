@@ -1,5 +1,6 @@
 A = [3,1,2,4,3]
 
+# Solution 1
 def solution(A):
     p = 1
     B = []

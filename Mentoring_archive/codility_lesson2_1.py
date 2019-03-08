@@ -3,7 +3,7 @@ a = [1,2,3,4]
 #
 # print(b+a)
 
-
+# Solution 1
 def rotation(l,c):
     rotatedList = l
     for i in range(c):

@@ -1,5 +1,6 @@
 A = [3,4,5,4,3,5,1,1,2,6,7,2,6]
 
+# Solution 1
 def solution(A):
     count = {}
     keys = []

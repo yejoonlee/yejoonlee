@@ -1,3 +1,5 @@
+
+# Solution 1
 def solution(X, Y, D):
     jumpCount = 0
     while X < Y:

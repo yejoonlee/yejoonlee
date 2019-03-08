@@ -1,6 +1,6 @@
 # 코딜리티 레슨 1
 
-
+# Solution 1
 def solution(N):
     # write your code in Python 3.6
     list = []

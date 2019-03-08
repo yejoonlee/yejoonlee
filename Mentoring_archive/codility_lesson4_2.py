@@ -4,6 +4,7 @@ from yeznable.Mentoring_archive import codility_lesson4_1
 
 A = [1,3,1,4,2,3,5,4]
 
+# Solution 1
 def solution(X, A):
     if len(list(set(A))) < X:
         print('Type1: frog is never able to jump to the other side of the river')
