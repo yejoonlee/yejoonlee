@@ -40,12 +40,12 @@ net = Net()
 
 input = torch.randn(1, 1, 32, 32)
 out = net(input)
-# print(out)
+# print(out.size())
 
-# net.zero_grad()
-# out.backward(torch.randn(1,10))
+net.zero_grad()
+out.backward(torch.randn(1,10))
 
-target = torch.arange(1, 11) # dummy
+target = torch.arange(1, 11, dtype=torch.float) # dummy
 target = target.view(1, -1)
 criterion = nn.MSELoss()
 
