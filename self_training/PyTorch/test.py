@@ -21,7 +21,7 @@ class Net(nn.Module) :
         # MAx pooling over a (2, 2) window
         x = F.max_pool2d(F.relu(self.conv1(x)), (2, 2))
         # if the size is a square you can only specify a single number
-        x = F.max_pool2d(F.relu(self.conv1(x)), 2)
+        x = F.max_pool2d(F.relu(self.conv2(x)), 2)
         x = x.view(-1,self.num_flat_features(x))
         x = F.relu(self.fc1(x))
         x = F.relu(self.fc2(x))
@@ -36,11 +36,18 @@ class Net(nn.Module) :
         return num_feature
 
 net = Net()
-print(net)
+# print(net)
 
-# input = torch.randn(1, 6, 14, 14)
-# out = net(input)
+input = torch.randn(1, 1, 32, 32)
+out = net(input)
 # print(out)
-# #
-# # net.zero_grad()
-# # out.backward(torch.randn(1,10))
+
+# net.zero_grad()
+# out.backward(torch.randn(1,10))
+
+target = torch.arange(1, 11) # dummy
+target = target.view(1, -1)
+criterion = nn.MSELoss()
+
+loss = criterion(out, target)
+print(loss)
