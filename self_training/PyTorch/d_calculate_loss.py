@@ -1,8 +1,8 @@
-from yeznable.self_training.PyTorch import nn_example
+from yeznable.self_training.PyTorch import c_nn_example
 
-net = nn_example.Net()
-torch = nn_example.torch
-nn = nn_example.nn
+net = c_nn_example.Net()
+torch = c_nn_example.torch
+nn = c_nn_example.nn
 
 input = torch.randn(1, 1, 32, 32)
 out = net(input)
