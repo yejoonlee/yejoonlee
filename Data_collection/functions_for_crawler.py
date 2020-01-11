@@ -7,13 +7,12 @@
 # 어렵지 않아서 굳이 함수로 만들필요가 없긴한데 매번 여러줄 쓰는게 귀찮아서 그냥 만듦
 # cursor의 사용법은 구글링으로 알아보기
 #
-def get_connection(host,user,password,db,charset):
+def get_connection(host,user,password,db):
     import pymysql.cursors
     connection = pymysql.connect(host='%s'%host,
                                  user='%s'%user,
                                  password='%s'%password,
-                                 db='%s'%db,
-                                 charset='%s'%charset)
+                                 db='%s'%db)
     return connection
 
 # driver: selenium driver
