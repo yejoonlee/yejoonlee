@@ -1,5 +1,6 @@
 import random
 import time
+from datetime import datetime, timedelta
 import sys
 sys.path.append('/Users/nezmi/Projects/yeznable_projects')
 
@@ -51,29 +52,47 @@ time.sleep(10)
 print('Found target...')
 
 # 마지막 포스트가 2018년 이후 포스트면 계속 돈다
-while True:
-    # 스크롤 내림
-    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-    time.sleep(2)
-    driver.execute_script("window.scrollTo(0, document.body.scrollHeight-50);")
-    time.sleep(2)
-    # 가장 마지막 게시물을 열어봄
-    driver.find_elements_by_class_name('v1Nh3 KIKUG  _bz0w')[-1].click()
-    if driver.find_elements_by_class_name('_1o9PC Nzb55').get_attribute("datetime") < 2018:
-        asdf = 0
-    # 2017년 포스트가 나오면 지금까지 포스트들 링크를 전부 저장
+# while True:
+#     # 스크롤 내림
+#     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+#     time.sleep(2)
+#     driver.execute_script("window.scrollTo(0, document.body.scrollHeight-50);")
+#     time.sleep(2)
+#     # 가장 마지막 게시물을 열어봄
+#     driver.find_elements_by_class_name('v1Nh3 KIKUG  _bz0w')[-1].click()
+#     # 2017년 포스트가 나오면 지금까지 포스트들 링크를 전부 저장
+#     time = driver.find_elements_by_class_name('_1o9PC Nzb55').get_attribute("datetime")
+#     if time.split('-')[0] < 2018:
+#         driver.find_elements_by_xpath('/html/body/div[4]/div[3]/button').click()
+#         links = driver.find_elements_by_class_name('v1Nh3 KIKUG  _bz0w').get_attribute("href")
+#         break
+#     driver.find_elements_by_xpath('/html/body/div[4]/div[3]/button').click()
 
-# DB에 연결해놓기
-# 로그인 정보들 숨길 필요가 있음
-mysql_user = id_pw_classes.mysql()
+driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+time.sleep(2)
+# driver.execute_script("window.scrollTo(0, document.body.scrollHeight-50);")
+# time.sleep(2)
+# 가장 마지막 게시물을 열어봄
+driver.find_elements_by_class_name('v1Nh3 KIKUG  _bz0w')
+driver.quit()
+#     .click()
+# # 2017년 포스트가 나오면 지금까지 포스트들 링크를 전부 저장
+# time = driver.find_elements_by_class_name('_1o9PC Nzb55').get_attribute("datetime")
+# driver.find_elements_by_xpath('/html/body/div[4]/div[3]/button').click()
+# links = driver.find_elements_by_class_name('v1Nh3 KIKUG  _bz0w').get_attribute("href")
+# driver.find_elements_by_xpath('/html/body/div[4]/div[3]/button').click()
 
-host = '127.0.0.1'
-user = mysql_user.id_yeznable
-password = mysql_user.pw_yeznable
-db = 'KAWS_instagram'
-
-# DB 커서를 생성해서 수집된 링크들을 받아옴
-query = "SELECT link FROM links"
+# # DB에 연결해놓기
+# # 로그인 정보들 숨길 필요가 있음
+# mysql_user = id_pw_classes.mysql()
+#
+# host = '127.0.0.1'
+# user = mysql_user.id_yeznable
+# password = mysql_user.pw_yeznable
+# db = 'KAWS_instagram'
+#
+# # DB 커서를 생성해서 수집된 링크들을 받아옴
+# query = "SELECT link FROM links"
 #
 # connection = functions_for_db.get_connection(host,user,password,db)
 # cursor = connection.cursor()
