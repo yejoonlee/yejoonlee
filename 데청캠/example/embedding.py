@@ -55,7 +55,7 @@ import cv2 as cv
 from collections import Counter
 import pytagcloud
 
-tag = [('hello',100),('world',80),('nice',60),('to',20),('meet',10),('you',50)]
+tag = [('hello',100),('world',80),('nice',60),('to',20),('meet',10)]
 tag_list = pytagcloud.make_tags(tag, maxsize=50)
 pytagcloud.create_tag_image(tag_list, 'word_cloud.jpg', size=(900,600), rectangular=False)
 

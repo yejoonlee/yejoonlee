@@ -106,7 +106,7 @@ for link in links:
         disc_links.append(game)
         print(f'collected link: {i}')
     browser.implicitly_wait(5)
-    # break
+    break
 
 lDisc = []
 
@@ -121,8 +121,8 @@ for i, game in enumerate(disc_links):
     lDisc.append(browser.find_element_by_css_selector("#fcxH9b > div.WpDbMd > c-wiz.zQTmif.SSPGKf.I3xX3c.drrice > div > div.ZfcPIb > div > div.JNury.Ekdcne > div > c-wiz:nth-child(1) > c-wiz:nth-child(3) > div > div.W4P4ne > div.PHBdkd > div.DWPxHb > span > div").text)
     print(f'collected page: {i}')
 
-    # if i == 10:
-    #     break
+    if i == 10:
+        break
 
 browser.quit()
 print(lDisc[0])
