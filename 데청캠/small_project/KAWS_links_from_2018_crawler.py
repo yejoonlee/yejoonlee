@@ -66,10 +66,10 @@ mysql_user_yeznable = id_pw_classes.mysql()
 host = '127.0.0.1'
 user = mysql_user_yeznable.id_yeznable
 password = mysql_user_yeznable.pw_yeznable
-db = 'KIC'
+db = 'KAWS_instagram'
 
-# # DB 커서를 생성해서 수집된 링크들을 받아옴
-# query = "SELECT feed_link FROM Raw"
+# DB 커서를 생성해서 수집된 링크들을 받아옴
+query = "SELECT link FROM Raw"
 #
 # connection = functions_for_db.get_connection(host,user,password,db)
 # cursor = connection.cursor()
