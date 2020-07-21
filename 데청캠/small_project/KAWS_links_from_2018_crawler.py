@@ -61,9 +61,11 @@ while True:
 
 # DB에 연결해놓기
 # 로그인 정보들 숨길 필요가 있음
+mysql_user_yeznable = id_pw_classes.mysql()
+
 host = '127.0.0.1'
-user = 'yeznale'
-password = 'cxzaqwe3'
+user = mysql_user_yeznable.id_yeznable
+password = mysql_user_yeznable.pw_yeznable
 db = 'KIC'
 
 # # DB 커서를 생성해서 수집된 링크들을 받아옴
