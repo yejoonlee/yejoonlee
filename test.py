@@ -1,29 +1,34 @@
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
+# import random
+# import time
+# from datetime import datetime, timedelta
+# import sys
+# sys.path.append('/Users/nezmi/Projects/yeznable_projects')
+#
+# from LAB.Data_collection import start_selenium
+# from LAB.Data_collection import functions_for_db
+# from personal import id_pw_classes
+#
+#  # DB에 연결해놓기
+# # 로그인 정보들 숨길 필요가 있음
+# mysql_user = id_pw_classes.mysql()
+#
+# host = '127.0.0.1'
+# user = mysql_user.id_yeznable
+# password = mysql_user.pw_yeznable
+# db = 'KAWS_instagram'
+#
+# # DB 커서를 생성해서 수집된 링크들을 받아옴
+# query = "SELECT link FROM posting_links"
+#
+# connection = functions_for_db.get_connection(host,user,password,db)
+# cursor = connection.cursor()
+# print('DB connected...')
+# cursor.execute(query)
+# tuple_link_collected = cursor.fetchall()
+# list_link_collected = [list(link)[0] for link in tuple_link_collected]
+#
+# print(str(len(list_link_collected)) + ' of posting links are collected')
+# print('acctualy ' + str(len(set(list_link_collected))) + ' of posting links are collected')
 
-DRIVER_DIR = "/Users/nezmi/Downloads/chromedriver"
-
-class Driver:
-    def __init__(self,user_agent,root_url):
-        self.opt = Options()
-        self.opt.add_argument("user-agent= %s" %user_agent)
-        self.root_url = root_url
-
-    def start(self):
-        driver = webdriver.Chrome(DRIVER_DIR, chrome_options=self.opt)
-        driver.implicitly_wait(5)
-
-        driver.get(self.root_url)
-
-        return driver
-
-root_url = "https://www.instagram.com/robineleyartist/"
-user_agent= "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36"
-
-
-Driver = Driver(user_agent,root_url)
-driver = Driver.start()
-
-driver.find_elements_by_tag_name('a').click()
-
-# driver.quit()
+import emoji
+print(emoji.demojize('✌️🇯🇵  # Repost @kyoko1903 ・・・ M'))
