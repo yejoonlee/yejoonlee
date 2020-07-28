@@ -1,14 +1,11 @@
-# import random
-# import time
-# from datetime import datetime, timedelta
 # import sys
+# from collections import Counter
 # sys.path.append('/Users/nezmi/Projects/yeznable_projects')
 #
-# from LAB.Data_collection import start_selenium
 # from LAB.Data_collection import functions_for_db
 # from personal import id_pw_classes
 #
-#  # DB에 연결해놓기
+# # DB에 연결해놓기
 # # 로그인 정보들 숨길 필요가 있음
 # mysql_user = id_pw_classes.mysql()
 #
@@ -17,18 +14,22 @@
 # password = mysql_user.pw_yeznable
 # db = 'KAWS_instagram'
 #
-# # DB 커서를 생성해서 수집된 링크들을 받아옴
-# query = "SELECT link FROM posting_links"
-#
 # connection = functions_for_db.get_connection(host,user,password,db)
 # cursor = connection.cursor()
 # print('DB connected...')
-# cursor.execute(query)
-# tuple_link_collected = cursor.fetchall()
-# list_link_collected = [list(link)[0] for link in tuple_link_collected]
 #
-# print(str(len(list_link_collected)) + ' of posting links are collected')
-# print('acctualy ' + str(len(set(list_link_collected))) + ' of posting links are collected')
+# # DB 커서를 생성해서 수집되어있는 링크와 포스팅 정보들을 받아옴
+# query_select_collected_postings_instances = "SELECT Link, Number_of_like, PostDate, Posting FROM POSTINGS ORDER BY PostDate DESC"
+# cursor.execute(query_select_collected_postings_instances)
+# tuple_collected_postings_instances = cursor.fetchall()      # ((Link, Number_of_like, PostDate, Posting), ...)
+#
+# print(str(tuple_collected_postings_instances[0][2]).split('-')[0])
+# print(tuple_collected_postings_instances[10][2])
+#
+# print(tuple_collected_postings_instances[0][2] - tuple_collected_postings_instances[10][2])
 
-import emoji
-print(emoji.demojize('✌️🇯🇵  # Repost @kyoko1903 ・・・ M'))
+dic = {1:'aaa', 2:'bbb'}
+
+dic.values() = map(lambda x: x[-1],dic.values())
+
+print(dic)
